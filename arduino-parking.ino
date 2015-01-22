@@ -1,36 +1,35 @@
 #include "Scheduler.h"
 #include "LedStripTask.h"
+#include "DistanceAlarmTask.h"
+#include "CarDetectionTask.h"
+#include "MsgService.h"
 
 Scheduler sched;
 
-Context* pContext = new Context(4); // move context inside setup 
-int i = 50;  // delete this..
-
 void setup(){
+  
+  MsgService.init("arduino-parkinig");
+  //  Serial.begin(9600);
   
   sched.init(100);
   
-  Serial.begin(9600);
+  Context* pContext = new Context(4, 3000); // max distance: 4m, delta: 5s
+  
+  Task* t0 = new CarDetectionTask(3, 4, pContext);
+  t0->init(100);
+  sched.addTask(t0);
  
   int leds[] = {13, 12, 11, 10, 9 , 8};
   Task* t1 = new LedStripTask(leds, 6, pContext);
   t1->init(100);
-  sched.addTask(t1);  
-    
+  sched.addTask(t1); 
+  
+  Task* t2 = new DistanceAlarmTask(6, pContext);
+  t2->init(100);
+  sched.addTask(t2);
+
 }
 
-void loop(){
-  
-  // manually simulating values, for now
-  Serial.println(i);
-  pContext->setDetectedObj(i);  
-  
-  if (i < 0) {
-    i = 50; 
-  } else {
-    i--; 
-  }
-  
+void loop(){  
   sched.schedule();
-
 }
