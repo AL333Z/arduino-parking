@@ -3,7 +3,7 @@ A parking lot management system, implemented with Arduino and Raspberry pi.
 
 This project is an attempt to focus on a paradigmatic and engineering point of view in developping embedded systems.
 
-##This is still a WIP, so you may wait some days until i complete a decent documentation. Or, if yuo are an haker, just look at the code <3
+##This is still a WIP, so you may wait some days until i complete a decent documentation. Or, if yuo are an hacker, just look at the code <3
 
 ![](arduino-parking_bb.png)
 
