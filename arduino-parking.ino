@@ -13,7 +13,7 @@ void setup(){
   
   sched.init(100);
   
-  Context* pContext = new Context(4, 3000); // max distance: 4m, delta: 5s
+  Context* pContext = new Context(4, 3000); // max distance: 4m, delta: 3s
   
   Task* t0 = new CarDetectionTask(3, 4, pContext);
   t0->init(100);

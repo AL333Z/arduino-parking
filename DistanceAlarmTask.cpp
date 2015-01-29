@@ -43,7 +43,7 @@ void DistanceAlarmTask::tick(){
 //    Serial.println("CAR_IN_RANGE");
     if (pContext->compareDistances(lastDistance, distance)) {
       state = WAIT_STOP;
-    } else if (!pContext->isObjDetected()) {
+    } else if (!(pContext->isObjDetected() && distance <= pContext->getMaxDistance())) {
       state = CAR_GONE;
     }
     
