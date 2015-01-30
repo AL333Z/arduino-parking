@@ -27,16 +27,6 @@ Since we can consider state transition for each FSM (task) occurring atomically,
 #Hardware
 ![](arduino-parking_bb.png)
 
-
-
-
-
-
-
-
-
-
-
 #Credits
 
-The idea has been taken from [here](https://sarpur.wordpress.com/2012/08/18/arduino-uno-parking-sensor/).
+The original idea has been taken from [here](https://sarpur.wordpress.com/2012/08/18/arduino-uno-parking-sensor/).
