@@ -3,7 +3,7 @@ A parking lot management system, implemented with Arduino and Raspberry pi.
 
 This project is an attempt to focus on a paradigmatic and engineering point of view in developping embedded systems.
 
-*NB: This repo contains only the arduino skecth. For a complete running example, see instruction [here](https://github.com/AL333Z/play-parking-pi).*
+*NB: This repo contains only the arduino skecth. For a complete running example, see instructions [here](https://github.com/AL333Z/play-parking-pi).*
 
 #Structure
 
