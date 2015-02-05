@@ -44,10 +44,10 @@ The priority of each task is implicitly determined by the order in which they ar
 
 #Tasks diagram
 
-![](tasks.png)
+![](images/tasks.png)
 
 #Hardware
-![](arduino-parking_bb.png)
+![](images/arduino-parking_bb.png)
 
 #Credits
 
