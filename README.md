@@ -5,6 +5,8 @@ This project is an attempt to focus on a paradigmatic and engineering point of v
 
 *NB: This repo contains only the arduino skecth. For a complete running example, see instructions [here](https://github.com/AL333Z/play-parking-pi).*
 
+![](images/arch-arduino.png)
+
 #Structure
 
 The system has 3 main tasks, modelled as *syncronous finite state machine*.
@@ -22,7 +24,7 @@ Since we can consider state transition for each FSM (task) occurring atomically,
 - **CarDetectionTask**, detecting the presence of a car nearby the distance sensor and comunicating that distance to the system.
 ```c++
   Task* t0 = new CarDetectionTask(3, 4, pContext); // trig at pin 3, echo at pin 4
-  t0->init(100);                                   // 100ms perdiod
+  t0->init(100);                                   // 100ms period
 ```
 
 - **LedStripTask**, that reacts to the presence of a car nearby the sensor turning on and off a led strip (the number of leds turned on is inversely proportional to the distance of the car from the sensor)
@@ -33,8 +35,8 @@ Since we can consider state transition for each FSM (task) occurring atomically,
 ```
 
 - **DistanceAlarmTask**, that reacts to the presence of a car nearby emitting a sound (with a buzzer) that is related to the distance of the car and sending a message to the serial port when:
-  - a car did arrived
-  - a car did gone
+  - a car is `ARRIVED`
+  - a car is `GONE`
 ```c++
   Task* t2 = new DistanceAlarmTask(6, pContext);  // buzzer at pin 6
   t2->init(100);                                  // 100ms period
